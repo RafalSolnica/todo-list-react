@@ -24,13 +24,6 @@
   padding: 5px;
 }
 
-@media (max-width: 767px) {
-  .section__buttonContainer {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-}
-
 .section__content {
   padding: 20px;
 }
