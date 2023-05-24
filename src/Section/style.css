@@ -1,0 +1,36 @@
+.section {
+  background: #fff;
+  box-shadow: 1px 1px 5px #ccc;
+  margin: 10px 0;
+}
+
+.section__header {
+  border-bottom: 1px solid #ccc;
+  padding: 20px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+}
+
+@media (max-width: 767px) {
+  .section__header {
+    grid-template-columns: auto;
+  }
+}
+
+.section__title {
+  margin-block-end: 0;
+  margin-block-start: 0;
+  padding: 5px;
+}
+
+@media (max-width: 767px) {
+  .section__buttonContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+.section__content {
+  padding: 20px;
+}
