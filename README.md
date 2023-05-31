@@ -2,7 +2,13 @@
 
 ## Description
 
+It's a simple to-do list this time made with React.js.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Demo
+
+https://rafalsolnica.github.io/todo-list-react/
 
 ## Available Scripts
 
