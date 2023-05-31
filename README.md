@@ -1,6 +1,6 @@
 # Rafał Solnica - To do list
 
-![header image](.\src\images\background.png)
+![header image](./src/images/background.png)
 
 ## Description
 
