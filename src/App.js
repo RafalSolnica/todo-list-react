@@ -14,7 +14,7 @@ let hideCompletedTasks = false;
 function App() {
   return (
     <Container>
-      <Header title="Lista zadań" />
+      <Header />
 
       <Section title="Dodaj nowe zadanie" content={<Form />} />
 
