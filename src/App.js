@@ -10,9 +10,15 @@ const tasks = [
   { id: 1, content: "Przejść na Reacta", completed: true },
   { id: 2, content: "Zjeść kolację", completed: false },
 ];
-let hideCompleted = false;
 
 function App() {
+  const [hideCompleted, setHideCompleted] = useState(false);
+
+  const toggleHideCompleted = () => {
+    console.log("test");
+    setHideCompleted((hideCompleted) => !hideCompleted);
+  };
+
   return (
     <Container>
       <Header />
@@ -22,7 +28,13 @@ function App() {
       <Section
         title="Lista zadań"
         content={<Tasks tasks={tasks} hideCompleted={hideCompleted} />}
-        extraHeaderContent={<Buttons tasks={tasks} />}
+        extraHeaderContent={
+          <Buttons
+            tasks={tasks}
+            hideCompleted={hideCompleted}
+            toggleHideCompleted={toggleHideCompleted}
+          />
+        }
       />
     </Container>
   );
