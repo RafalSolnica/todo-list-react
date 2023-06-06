@@ -34,6 +34,14 @@ function App() {
     );
   };
 
+  const markAllCompleted = () => {
+    setTasks((tasks) =>
+      tasks.map((task) => {
+        return { ...task, completed: true };
+      })
+    );
+  };
+
   return (
     <Container>
       <Header />
@@ -55,6 +63,7 @@ function App() {
             tasks={tasks}
             hideCompleted={hideCompleted}
             toggleHideCompleted={toggleHideCompleted}
+            markAllCompleted={markAllCompleted}
           />
         }
       />
