@@ -18,6 +18,6 @@
 }
 
 .buttons__button:disabled {
-  color: grey;
+  color: hsl(0, 0%, 75%);
   cursor: default;
 }
