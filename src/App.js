@@ -21,6 +21,19 @@ function App() {
     setTasks((tasks) => tasks.filter((task) => task.id !== id));
   };
 
+  const toggleTaskCompleted = (id) => {
+    setTasks((tasks) =>
+      tasks.map((task) =>
+        task.id === id
+          ? {
+              ...task,
+              completed: !task.completed,
+            }
+          : task
+      )
+    );
+  };
+
   return (
     <Container>
       <Header />
@@ -34,6 +47,7 @@ function App() {
             tasks={tasks}
             hideCompleted={hideCompleted}
             removeTask={removeTask}
+            toggleTaskCompleted={toggleTaskCompleted}
           />
         }
         extraHeaderContent={
