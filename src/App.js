@@ -8,10 +8,7 @@ import { useState } from "react";
 
 function App() {
   const [hideCompleted, setHideCompleted] = useState(false);
-  const [tasks, setTasks] = useState([
-    { id: 1, content: "Przejść na Reacta", completed: true },
-    { id: 2, content: "Zjeść kolację", completed: false },
-  ]);
+  const [tasks, setTasks] = useState([]);
 
   const toggleHideCompleted = () => {
     setHideCompleted((hideCompleted) => !hideCompleted);
@@ -39,7 +36,7 @@ function App() {
   };
 
   const addNewTask = (content) => {
-    setTasks((tasks) => [...tasks, { id: tasks.length + 1, content: content }]);
+    setTasks((tasks) => [...tasks, { id: tasks.length + 1, content }]);
   };
 
   return (

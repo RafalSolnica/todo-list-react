@@ -6,17 +6,13 @@ const Form = ({ addNewTask }) => {
 
   const ref = useRef(null);
 
-  const resetTaskInput = () => {
-    setTaskContent("");
-    ref.current.focus();
-  };
-
   const onFormSubmit = (event) => {
     event.preventDefault();
 
     if (taskContent.trim() !== "") addNewTask(taskContent.trim());
 
-    resetTaskInput();
+    setTaskContent("");
+    ref.current.focus();
   };
 
   return (
