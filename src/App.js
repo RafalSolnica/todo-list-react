@@ -34,19 +34,22 @@ function App() {
     );
   };
 
-  const markAllCompleted = () => {
-    setTasks((tasks) =>
-      tasks.map((task) => {
-        return { ...task, completed: true };
-      })
-    );
+  const setAllCompleted = () => {
+    setTasks((tasks) => tasks.map((task) => ({ ...task, completed: true })));
+  };
+
+  const addNewTask = (content) => {
+    setTasks((tasks) => [...tasks, { id: tasks.length + 1, content: content }]);
   };
 
   return (
     <Container>
       <Header />
 
-      <Section title="Dodaj nowe zadanie" content={<Form />} />
+      <Section
+        title="Dodaj nowe zadanie"
+        content={<Form addNewTask={addNewTask} />}
+      />
 
       <Section
         title="Lista zadań"
@@ -63,7 +66,7 @@ function App() {
             tasks={tasks}
             hideCompleted={hideCompleted}
             toggleHideCompleted={toggleHideCompleted}
-            markAllCompleted={markAllCompleted}
+            setAllCompleted={setAllCompleted}
           />
         }
       />

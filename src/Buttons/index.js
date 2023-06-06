@@ -4,7 +4,7 @@ const Buttons = ({
   tasks,
   hideCompleted,
   toggleHideCompleted,
-  markAllCompleted,
+  setAllCompleted,
 }) => (
   <div className="buttons">
     {tasks.length > 0 && (
@@ -18,7 +18,7 @@ const Buttons = ({
 
         <button
           className="buttons__button"
-          onClick={() => markAllCompleted()}
+          onClick={() => setAllCompleted()}
           disabled={tasks.every(({ completed }) => completed)}
         >
           Ukończ wszystkie
