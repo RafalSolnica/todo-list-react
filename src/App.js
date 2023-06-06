@@ -4,12 +4,13 @@ import Buttons from "./Buttons";
 import Section from "./Section";
 import Header from "./Header";
 import Container from "./Container";
+import { useState } from "react";
 
 const tasks = [
   { id: 1, content: "Przejść na Reacta", completed: true },
   { id: 2, content: "Zjeść kolację", completed: false },
 ];
-let hideCompletedTasks = false;
+let hideCompleted = false;
 
 function App() {
   return (
@@ -20,9 +21,7 @@ function App() {
 
       <Section
         title="Lista zadań"
-        content={
-          <Tasks tasks={tasks} hideCompletedTasks={hideCompletedTasks} />
-        }
+        content={<Tasks tasks={tasks} hideCompleted={hideCompleted} />}
         extraHeaderContent={<Buttons tasks={tasks} />}
       />
     </Container>
