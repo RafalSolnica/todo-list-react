@@ -4,11 +4,19 @@ import Buttons from "./Buttons";
 import Section from "./Section";
 import Header from "./Header";
 import Container from "./Container";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
+  const localStorageTasks = localStorage.getItem("tasks");
+
   const [hideCompleted, setHideCompleted] = useState(false);
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(
+    localStorageTasks ? JSON.parse(localStorageTasks) : []
+  );
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const toggleHideCompleted = () => {
     setHideCompleted((hideCompleted) => !hideCompleted);
