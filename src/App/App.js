@@ -1,9 +1,9 @@
 import Form from "../Form";
 import Tasks from "../Tasks";
 import Buttons from "./Buttons";
-import Section from "../Section";
 import Container from "../Container";
 import { useState, useEffect } from "react";
+import { Header, Wrapper, Content } from "./styled";
 
 function App() {
   const localStorageTasks = localStorage.getItem("tasks");
@@ -59,30 +59,36 @@ function App() {
         <h1>Lista zadań</h1>
       </header>
 
-      <Section
-        title="Dodaj nowe zadanie"
-        content={<Form addNewTask={addNewTask} />}
-      ></Section>
+      <Wrapper>
+        <Header>
+          <h2>Dodaj nowe zadanie</h2>
+        </Header>
 
-      <Section
-        title="Lista zadań"
-        content={
-          <Tasks
-            tasks={tasks}
-            hideCompleted={hideCompleted}
-            removeTask={removeTask}
-            toggleTaskCompleted={toggleTaskCompleted}
-          />
-        }
-        extraHeaderContent={
+        <Content>
+          <Form addNewTask={addNewTask} />
+        </Content>
+      </Wrapper>
+
+      <Wrapper>
+        <Header>
+          <h2>Lista zadań</h2>
           <Buttons
             tasks={tasks}
             hideCompleted={hideCompleted}
             toggleHideCompleted={toggleHideCompleted}
             setAllCompleted={setAllCompleted}
           />
-        }
-      ></Section>
+        </Header>
+
+        <Content>
+          <Tasks
+            tasks={tasks}
+            hideCompleted={hideCompleted}
+            removeTask={removeTask}
+            toggleTaskCompleted={toggleTaskCompleted}
+          />
+        </Content>
+      </Wrapper>
     </Container>
   );
 }
