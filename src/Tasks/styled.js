@@ -44,14 +44,6 @@ export const Button = styled.button`
     css`
       font-size: 21px;
       background: ${({ theme }) => theme.color.green};
-
-      &:hover {
-        filter: brightness(1.25);
-      }
-
-      &:active {
-        filter: brightness(1.5);
-      }
     `}
 
   ${({ $remove }) =>
@@ -59,13 +51,13 @@ export const Button = styled.button`
     css`
       font-size: 28px;
       background: ${({ theme }) => theme.color.red};
-
-      &:hover {
-        filter: brightness(1.25);
-      }
-
-      &:active {
-        filter: brightness(1.5);
-      }
     `}
+
+    &:hover {
+    filter: brightness(1.25);
+  }
+
+  &:active {
+    filter: brightness(1.5);
+  }
 `;
