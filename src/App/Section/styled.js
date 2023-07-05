@@ -10,8 +10,9 @@ export const Header = styled.header`
   border-bottom: 1px solid ${({ theme }) => theme.color.grey};
   padding: 20px;
   margin: 0;
-  display: grid;
-  grid-template-columns: 1fr auto auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     grid-template-columns: auto;
@@ -19,11 +20,11 @@ export const Header = styled.header`
 `;
 
 export const Title = styled.h2`
-  margin-block-end: 0;
-  margin-block-start: 0;
-  padding: 5px;
+  /* margin: 0; */
+  /* padding: 5px; */
 `;
 
 export const Content = styled.div`
   padding: 20px;
+  flex-grow: 1;
 `;

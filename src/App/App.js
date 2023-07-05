@@ -1,9 +1,8 @@
-import Form from "./Form";
-import Tasks from "./Tasks";
+import Form from "../Form";
+import Tasks from "../Tasks";
 import Buttons from "./Buttons";
-import Section from "./Section";
-import Header from "./Header";
-import Container from "./Container";
+import Section from "../Section";
+import Container from "../Container";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -56,12 +55,14 @@ function App() {
 
   return (
     <Container>
-      <Header />
+      <header>
+        <h1>Lista zadań</h1>
+      </header>
 
       <Section
         title="Dodaj nowe zadanie"
         content={<Form addNewTask={addNewTask} />}
-      />
+      ></Section>
 
       <Section
         title="Lista zadań"
@@ -81,7 +82,7 @@ function App() {
             setAllCompleted={setAllCompleted}
           />
         }
-      />
+      ></Section>
     </Container>
   );
 }
