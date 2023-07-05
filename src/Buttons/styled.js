@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const ButtonContainer = styled.div`
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -9,17 +9,17 @@ export const ButtonContainer = styled.div`
 
 export const Button = styled.button`
   border: none;
-  background: #fff;
-  color: hsl(187, 100%, 25%);
+  background: ${({ theme }) => theme.color.white};
+  color: ${({ theme }) => theme.color.teal};
   transition: 0.5s;
   padding: 10px;
 
-  &:hover {
-    color: hsl(187, 100%, 40%);
+  &:hover:enabled {
+    filter: brightness(120%);
   }
 
   &:disabled {
-    color: hsl(0, 0%, 75%);
+    color: ${({ theme }) => theme.color.grey};
     cursor: default;
   }
 `;

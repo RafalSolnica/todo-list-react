@@ -11,7 +11,7 @@ export const Item = styled.li`
   align-items: center;
   gap: 10px;
   padding: 10px;
-  border-bottom: 2px solid #ededed;
+  border-bottom: 2px solid ${({ theme }) => theme.color.lightGrey};
 
   ${({ $hidden }) =>
     $hidden &&
@@ -36,36 +36,36 @@ export const Button = styled.button`
   width: 30px;
   height: 30px;
   text-align: center;
-  color: white;
+  color: ${({ theme }) => theme.color.white};
   transition: 0.5s;
 
   ${({ $toggleCompleted }) =>
     $toggleCompleted &&
     css`
       font-size: 21px;
-      background: hsl(120, 100%, 25%);
+      background: ${({ theme }) => theme.color.green};
 
       &:hover {
-        background: hsl(120, 100%, 35%);
+        filter: brightness(1.25);
       }
 
       &:active {
-        background: hsl(120, 100%, 45%);
+        filter: brightness(1.5);
       }
     `}
 
   ${({ $remove }) =>
     $remove &&
     css`
-      background: hsl(0, 100%, 50%);
       font-size: 28px;
+      background: ${({ theme }) => theme.color.red};
 
       &:hover {
-        background: hsl(0, 100%, 62%);
+        filter: brightness(1.25);
       }
 
       &:active {
-        background: hsl(0, 100%, 75%);
+        filter: brightness(1.5);
       }
     `}
 `;

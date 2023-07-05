@@ -12,25 +12,25 @@ export const Input = styled.input`
   flex-grow: 1;
   padding: 8px;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     flex-basis: 100%;
   }
 `;
 
 export const Button = styled.button`
   border: none;
-  background: hsl(187, 100%, 25%);
-  color: white;
+  background: ${({ theme }) => theme.color.teal};
+  color: ${({ theme }) => theme.color.white};
   padding: 10px;
   transition: 0.5s;
 
   &:hover {
-    background: hsl(187, 100%, 33%);
+    filter: brightness(125%);
     scale: 1.1;
   }
 
   &:active {
-    background: hsl(187, 100%, 40%);
+    filter: brightness(150%);
   }
 
   @media (max-width: 767px) {
