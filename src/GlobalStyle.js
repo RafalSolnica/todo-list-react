@@ -1,3 +1,6 @@
+import { createGlobalStyle } from "styled-components";
+
+export const GlocalStyle = createGlobalStyle`
 html {
   box-sizing: border-box;
 }
@@ -9,7 +12,7 @@ html {
 }
 
 body {
-  background: #ededed;
+  background: ${({ theme }) => theme.color.lightGrey};
   font-family: "Lato", sans-serif;
   word-break: break-word;
 }
@@ -21,3 +24,4 @@ img {
 button {
   cursor: pointer;
 }
+`;
