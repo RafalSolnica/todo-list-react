@@ -1,7 +1,5 @@
-import { StyledContainer } from "./styled";
+import { Wrapper } from "./styled";
 
-const Container = ({ children }) => (
-  <StyledContainer>{children}</StyledContainer>
-);
+const Container = ({ children }) => <Wrapper>{children}</Wrapper>;
 
 export default Container;

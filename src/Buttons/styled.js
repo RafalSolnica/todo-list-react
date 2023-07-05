@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const ButtonContainer = styled.div`
+export const ButtonsContainer = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: grid;
     grid-template-columns: 1fr;

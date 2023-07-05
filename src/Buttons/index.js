@@ -1,4 +1,4 @@
-import { ButtonContainer, Button } from "./styled";
+import { ButtonsContainer, Button } from "./styled";
 
 const Buttons = ({
   tasks,
@@ -6,7 +6,7 @@ const Buttons = ({
   toggleHideCompleted,
   setAllCompleted,
 }) => (
-  <ButtonContainer>
+  <ButtonsContainer>
     {tasks.length > 0 && (
       <>
         <Button onClick={() => toggleHideCompleted()}>
@@ -21,7 +21,7 @@ const Buttons = ({
         </Button>
       </>
     )}
-  </ButtonContainer>
+  </ButtonsContainer>
 );
 
 export default Buttons;
