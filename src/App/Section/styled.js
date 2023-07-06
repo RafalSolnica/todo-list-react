@@ -15,7 +15,6 @@ export const Header = styled.header`
   align-items: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    grid-template-columns: auto;
   }
 `;
 

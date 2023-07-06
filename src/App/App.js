@@ -2,8 +2,8 @@ import Form from "../Form";
 import Tasks from "../Tasks";
 import Buttons from "./Buttons";
 import Container from "../Container";
+import Section from "./Section";
 import { useState, useEffect } from "react";
-import { Header, Wrapper, Content } from "./styled";
 
 function App() {
   const localStorageTasks = localStorage.getItem("tasks");
@@ -59,36 +59,30 @@ function App() {
         <h1>Lista zadań</h1>
       </header>
 
-      <Wrapper>
-        <Header>
-          <h2>Dodaj nowe zadanie</h2>
-        </Header>
+      <Section
+        title="Dodaj nowe zadanie"
+        content={<Form addNewTask={addNewTask} />}
+      />
 
-        <Content>
-          <Form addNewTask={addNewTask} />
-        </Content>
-      </Wrapper>
-
-      <Wrapper>
-        <Header>
-          <h2>Lista zadań</h2>
+      <Section
+        title="Lista zadań"
+        extraHeaderContent={
           <Buttons
             tasks={tasks}
             hideCompleted={hideCompleted}
             toggleHideCompleted={toggleHideCompleted}
             setAllCompleted={setAllCompleted}
           />
-        </Header>
-
-        <Content>
+        }
+        content={
           <Tasks
             tasks={tasks}
             hideCompleted={hideCompleted}
             removeTask={removeTask}
             toggleTaskCompleted={toggleTaskCompleted}
           />
-        </Content>
-      </Wrapper>
+        }
+      />
     </Container>
   );
 }
