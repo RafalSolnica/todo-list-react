@@ -4,7 +4,7 @@
 
 ## Description
 
-It's a simple to-do list. This time made with React.js.
+It's a simple to-do list. This time made with React.js. Now, thanks to custom hooks and use of local storage your tasks are beign kept between browser sessions
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -48,4 +48,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 - HTML, BEM convention
 - CSS, normalize.css, flexbox, CSS Grid
-- JavaScript ES6+ features, React, React-DOM, Babel
+- JavaScript ES6+ features
+- React, React-DOM, Babel
+- custom hooks,
+- Styled-components,
