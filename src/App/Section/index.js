@@ -1,9 +1,9 @@
-import { Wrapper, Header, Content } from "./styled";
+import { Wrapper, Header, Title, Content } from "./styled";
 
 const Section = ({ title, extraHeaderContent, content }) => (
   <Wrapper>
     <Header>
-      <h2>{title}</h2>
+      <Title>{title}</Title>
       {extraHeaderContent}
     </Header>
 

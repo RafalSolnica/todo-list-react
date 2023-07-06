@@ -10,15 +10,21 @@ export const Header = styled.header`
   border-bottom: 1px solid ${({ theme }) => theme.color.grey};
   padding: 20px;
   margin: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    & {
+      grid-template-columns: auto;
+    }
   }
+`;
+
+export const Title = styled.h2`
+  margin: 0;
+  padding: 5px;
 `;
 
 export const Content = styled.div`
   padding: 20px;
-  flex-grow: 1;
 `;
