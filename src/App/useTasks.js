@@ -1,7 +1,13 @@
+import { useState } from "react";
 import useLocalStorageState from "./useLocalStorageState";
 
 export const useTasks = () => {
   const [tasks, setTasks] = useLocalStorageState("tasks", []);
+  const [hideCompleted, setHideCompleted] = useState(false);
+
+  const toggleHideCompleted = () => {
+    setHideCompleted((hideCompleted) => !hideCompleted);
+  };
 
   const removeTask = (id) => {
     setTasks((tasks) => tasks.filter((task) => task.id !== id));
@@ -37,6 +43,8 @@ export const useTasks = () => {
 
   return {
     tasks,
+    hideCompleted,
+    toggleHideCompleted,
     removeTask,
     toggleTaskCompleted,
     setAllCompleted,

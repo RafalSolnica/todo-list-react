@@ -3,18 +3,13 @@ import Tasks from "./Tasks";
 import Buttons from "./Buttons";
 import Container from "./Container";
 import Section from "./Section";
-import { useState } from "react";
 import { useTasks } from "./useTasks";
 
 function App() {
-  const [hideCompleted, setHideCompleted] = useState(false);
-
-  const toggleHideCompleted = () => {
-    setHideCompleted((hideCompleted) => !hideCompleted);
-  };
-
   const {
     tasks,
+    hideCompleted,
+    toggleHideCompleted,
     removeTask,
     toggleTaskCompleted,
     setAllCompleted,
